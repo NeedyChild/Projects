@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Search</title>
+
+    <link rel="stylesheet" href="/static/styles.css" />
+    <!-- <script type="module" src="https://cdn.jsdelivr.net/npm/latlon-geohash@2.0.0/latlon-geohash.min.js"></script> -->
+
+    <script src="/static/latlon-geohash.js" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="/static/app.js" defer></script>
+</head>
+<body>
+    <div class="form">
+
+        <p id="header">Events Search</p>
+        <hr id="formline" />
+        
+        <form action="" onsubmit="return false">
+            <label>Keyword</label>
+            <span class="star">*</span>
+            <input type="text" name="" required="required" id="keywordInput" />
+            
+            <br />
+
+            <div id="distance-and-category">
+                <div id="distance">
+                    <label>Distance(miles)</label>
+                    <input type="number" placeholder="10" id="distanceInput" />
+                </div>
+                <div id="category">
+                    <label>Category</label>
+                    <span class="star">*</span>
+                    <select name="" required="required" id="categoryInput">
+                        <option value="Default">Default</option>
+                        <option value="Music">Music</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Arts & Theatre">Arts & Theatre</option>
+                        <option value="Film">Film</option>
+                        <option value="Miscellaneous">Miscellaneous</option>
+                    </select>
+                </div>
+            </div>
+
+            <br />
+
+            <label>
+                Location
+                <span class="star">*  </span>
+                <input type="checkbox" id="auto-detect-checkbox"/>
+                <span id="auto-detect-message">Auto-Detect Location</span>
+            </label>
+            <div id="locationInputContainer">
+                <input type="text" required="required" id="locationInput" />
+            </div>
+
+            <br />
+            <br />
+            
+            <button type="submit" class="buttons" id="searchButton">SEARCH</button>
+            <button type="button" class="buttons" id="clearButton">CLEAR</button>
+        </form>
+    </div>
+
+
+    <!-- table that shows the results -->
+    <div>
+        <table class="table none">
+            <thead>
+                <tr id="tableHeader">
+                    <td id="dateHeader">Date</td>
+                    <td id="iconHeader">Icon</td>
+                    <td id="eventHeader">Event</td>
+                    <td id="genreHeader">Genre</td>
+                    <td id="venueHeader">Venue</td>
+                </tr>
+            </thead>
+            <tbody id="posts">
+                <!-- <tr id="tableHeader">
+                    <td id="dateHeader">Date</td>
+                    <td id="iconHeader">Icon</td>
+                    <td id="eventHeader">LADANIVA</td>
+                    <td id="genreHeader">Music</td>
+                    <td id="venueHeader">Venue</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+    <div class="noRecordMessage none">
+        <p>No Records found</p>
+    </div>
+
+    <div class="eventCard none" id="eventCard">
+        <div id="eventCardHeader">
+            <p id="eventCardHeaderContent"></p>
+        </div>
+
+        <div style="width: 100%; margin: 40px;">
+            <div style="width: 40%; float: left;">
+                <div class="eventCardSection" id="dateDiv">
+                    <p class="eventCardSectionHeader">Date</p>
+                    <p class="eventCardSectionText" id="date"></p>
+                </div>
+
+                <div class="eventCardSection" id="artistDiv"></div>
+
+                <div class="eventCardSection" id="venueDiv">
+                    <p class="eventCardSectionHeader">Venue</p>
+                    <p class="eventCardSectionText" id="venue"></p>
+                </div>
+
+                <div class="eventCardSection" id="genreDiv">
+                    <p class="eventCardSectionHeader">Genres</p>
+                    <p class="eventCardSectionText" id="genre"></p>
+                </div>
+
+
+                <div class="eventCardSection" id="priceRangeDiv">
+                    <p class="eventCardSectionHeader">Price Ranges</p>
+                    <p class="eventCardSectionText" id="priceRange"></p>
+                </div>
+
+                <div class="eventCardSection" id="ticketStatusDiv">
+                    <p class="eventCardSectionHeader" id="ticketStatusHeader">Ticket Status</p>
+                    <p class="eventCardSectionText statusRect" id="ticketStatus"></p>
+                </div>
+
+                <div class="eventCardSection" id="buyTicketAtDiv">
+                    <p class="eventCardSectionHeader">Buy Ticket At:</p>
+                    <a href="" id="ticketmasterLink" target="_blank">Ticketmaster</a>
+                </div>
+
+            </div>
+            <div id="eventPictureContainer">
+                <img src="" alt="" id="eventPicture" />
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <div class="showVenueDetails none">
+    </div>
+
+    <div class="venueCard none">
+        <div class="venueCardContent">
+            <div id="venueCardHeader">
+                <p id="venueCardHeaderText"></p>
+            </div>
+
+            <br />
+
+            <div id="venueCardIconDiv">
+                <img src="" alt="" id="venueCardIcon" />
+            </div>
+
+            <div class="venueCardDetails" style="width: 100%;">
+                <div class="addressDetails" style="width: 50%;">
+                    <div>
+                        <div style="width: 40%; float: left; text-align: right;" id="addressHeaderDiv">
+                            <p class="addressHeader" id="addressHeader">Address:</p>
+                        </div>
+                        <div class="addressContentContainer">
+                            <div id="address1Div">
+                                <p class="addressContent" id="address1"></p>
+                            </div>
+
+                            <div id="address2Div">
+                                <p class="addressContent" id="address2"></p>
+                            </div>
+
+                            <div id="address3Div">
+                                <p class="addressContent" id="address3"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="googleMapLinkContainer" id="googleMapLinkDiv">
+                        <a href="" id="googleMapLink" target="_blank">
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+                <div class="moreVenueEvents" style="width: 50%; border-left: 1px solid black;" id="moreVenueEventsLinkDiv">
+                    <a href="" id="moreVenueEventsLink" target="_blank">
+                        More events at this venue
+                    </a>
+                </div>
+            </div>  
+
+            <div style="clear: both;"></div> 
+
+        </div>
+    </div>
+    <template id="template-for-post">
+        <tr class="one-post">
+            <td class="date" style="white-space: pre;"></td>
+            <td class="icon"></td>
+            <td class="event"></td>
+            <td class="genre"></td>
+            <td class="venue"></td>
+        </tr>
+    </template>   
+</body>
+</html>

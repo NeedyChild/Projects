@@ -1,0 +1,403 @@
+body {
+    background-image: url(/static/image/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.form {
+    width: 600px;
+    margin: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(140, 140, 140, 0.3);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+}
+label {
+    color: #9cc9e4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: smaller;
+}
+#formline {
+    width: 92%;
+    color: white;
+
+}
+form {
+    margin: 20px;
+    width: 92%;
+}
+.star {
+    color: red;
+}
+#header {
+    color: white;
+    text-align: center;
+    font-weight:lighter; 
+    width: 100%;
+    font-size: 2rem;
+    height: 32px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+    /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+
+#category {
+    margin-left: 50%;
+    width: 52%;
+}
+
+input[type="text"], input[type="number"],select {
+    width: 95%;
+    height: 40px;
+    display: inline-block;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    padding: 0px 14px;
+    margin-top: 5px;
+}
+
+/* input[type="text"]:valid, input[type="text"]:invalid {
+    background-color: rgba(255, 255, 255, 0);
+} */
+
+input[type="checkbox"] {
+    transform: scale(0.8);
+    color: white;
+    margin-right: 0px;
+}
+#distance-and-category {
+    width: 100%;
+    margin-top: 10px;
+}
+
+#distance {
+    width: 30%;
+    float: left;
+}
+
+#auto-detect-message {
+    color: white;
+}
+
+.buttons {
+    margin-top: 10px;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+    height: 40px;
+}
+
+#searchButton {
+    width: 100px;
+    background-color: #ed752f;
+    border-bottom: #e85928 3px solid;
+}
+
+#searchButton:hover {
+    background-color: #fd8f54;
+}
+
+#clearButton {
+    margin-left: 2px;
+    width: 90px;
+    background-color: #566ea8;
+    border-bottom: #3c4c74 3px solid;
+}
+
+#clearButton:hover {
+    background-color: #5e7db3;
+}
+
+.none {
+    display: none;
+}
+
+.table {
+    width: 1060px;
+    background-color: #f9faf9;
+    table-layout: fixed;
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.table thead {
+    border: 1px solid;
+    height: 50px;
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.table tbody {
+    height: 90px;
+    border: 1px solid;
+}
+
+.table td {
+    text-align: center;
+    border: 1px solid black;
+}
+#dateHeader {
+    width: 15%;
+}
+
+#iconHeader {
+    width: 15%;
+}
+
+#eventHeader {
+    width: 40%;
+    cursor: pointer;
+
+}
+
+
+#genreHeader {
+    width: 10%;
+    cursor: pointer;
+}
+
+#venueHeader {
+    width: 20%;
+    cursor: pointer;
+}
+
+
+.noRecordMessage {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    text-align: center;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-top: 40px;
+    color: red;
+    height: 46px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.eventCard {
+    width: 900px;
+    margin: auto;
+    margin-top: 40px;
+    padding-top: 1px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(140, 140, 140, 0.3);
+    border-radius: 20px;
+
+}
+
+#eventCardHeader {
+    margin: auto;
+    margin-top: 20px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    /* font-weight: bold; */
+}
+
+.eventCardSection {
+    margin: 15px 0px;
+}
+
+#ticketStatusDiv {
+    margin-bottom: 5px;
+}
+
+#buyTicketAtDiv {
+    margin-top: 5px;
+}
+
+.eventCardSectionHeader {
+    /* font-weight: bold; */
+    font-size: 20px;
+    color: #99f6e0;
+    margin: 9px 0px;
+}
+
+#ticketStatusHeader {
+    margin-bottom: 1px;
+}
+.eventCardSectionText {
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 9px 0px;
+}
+
+.statusRect {
+    display: inline-block;
+    padding: 7px 8px;
+    border-radius: 10px;
+    margin-top: 1px;
+    margin-bottom: 1px;
+}
+
+.artistLink, #ticketmasterLink {
+    color: #57a4cc;
+    text-decoration: none;
+}
+#eventPictureContainer {
+    margin-left: 40%;
+    width: 580px;
+}
+
+.onSale {
+    background-color: green;
+}
+
+.offSale {
+    background-color: red;
+}
+
+.canceled {
+    background-color: black;
+}
+
+.rescheduled, .postponed {
+    background-color: orange;
+}
+
+#showVenueDetailsText {
+    text-align: center;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+#showVenueDetailsArrow {
+    display: block;
+    margin: auto;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-left: 0px;
+    border-top: 0px;
+    transform: rotate(0.125turn);
+    cursor: pointer;
+}
+
+#arrowBackground {
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.venueCard {
+    width: 900px;
+    border-radius: 20px;
+    background-color: #f9f9f9f9;
+    margin: auto;
+    margin-top: 40px;
+    padding: 10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.venueCardContent {
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: center;
+}
+
+#venueCardHeader {
+    margin: 15px 0px;
+    /* margin-bottom: 30px; */
+    display: inline-block;
+    padding: 0px 9px;;
+    border-bottom: 1px solid black;
+    height: 29px;
+}
+
+#venueCardHeaderText {
+    margin: 0px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#venueCardIcon {
+    margin: 11px 0px;
+}
+
+#moreVenueEventsLink, #googleMapLink{
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    color: #4792b0;
+}
+
+.addressHeader {
+    font-size: 15px;
+    color: #090909;
+    font-weight: bold;
+    margin: 0px;
+    padding-inline: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.addressContentContainer {
+    padding: 0px 5px;
+    font-size: 15px;
+    margin-left: 40%;
+}
+
+.addressContent {
+    margin-top: 0px;
+    margin-bottom: 3px;
+    text-align: left;
+}
+
+.venueCardDetails {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 24px;
+}
+
+.googleMapLinkContainer {
+    margin: 13px 0px;
+}
+
+#artistLink:hover, 
+#ticketmasterLink:hover, 
+#moreVenueEventsLink:hover, 
+#googleMapLink:hover{
+    color: #7669cb;
+}
+
+.one-post {
+    height: 64px;
+}
+
+.imageContent {
+    height: 40px;
+    width: 64x;
+    object-fit: cover;
+}
+
+.eventCardLink {
+    text-decoration: none;
+    color: black;
+}
+
+.eventCardLink:hover {
+    color: #7669cb;
+}
+
+#eventPicture {
+    object-fit: contain;
+    width: 400px;
+}
+
+/* #venueCardIcon {
+    transform: scale(0.8);
+} */
