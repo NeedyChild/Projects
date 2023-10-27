@@ -1,4 +1,4 @@
-<font size="4">这是一段较大的文本。</font>
+<font size="6">这是一段较大的文本。</font>
 
 
 This is a repository for my project. Here's some information about it:
