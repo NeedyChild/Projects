@@ -1,22 +1,7 @@
-# My GitHub Repository
+# Project1
 
-This is a repository for my project. Here's some information about it:
+Codes and demo for ticketing website based on Angular & Node.js, which was deployed to AWS Elastic Beanstalk.
 
-- **Feature 1:** This is a feature description.
-- **Feature 2:** This is another feature description.
+# Project2
 
-## Installation
-
-To use this project, follow these steps:
-
-1. Clone the repository.
-2. Install the required dependencies.
-
-## Usage
-
-Here's how to use this project:
-
-1. Run the `main.py` script.
-2. Configure the settings in the `config.json` file.
-
-Happy coding!
+Codes and link for website based on HTML, CSS, JavaScript & Python, which was deployed to Google Cloud Platform.
