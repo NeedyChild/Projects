@@ -1,0 +1,12 @@
+.table {
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.images {
+    object-fit: cover;
+    width: 8vw;
+    height: 8vh;
+    max-width: 80px;
+    max-height: 100px;
+}

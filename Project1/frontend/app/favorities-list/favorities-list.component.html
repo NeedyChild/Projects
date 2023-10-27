@@ -1,0 +1,96 @@
+<div
+  class="container justify-content-center align-items-center my-5 px-0"
+  style="max-width: 700px"
+>
+  <!-- <div
+    class="card py-0"
+    style="
+      border-radius: 1rem;
+      background-color: white;
+      max-width: 650px;
+      margin: auto;
+    "
+    *ngIf="favoriteEventArray.length < 1"
+  >
+    <p class="text-center text-danger m-0 p-0 fw-bold" style="font-size: 18px">
+      No favorite events to show
+    </p>
+  </div> -->
+
+  <div
+    style="
+      margin-top: 100px;
+      margin-bottom: 100px;
+      padding-left: 75px;
+      padding-right: 75px;
+    "
+    *ngIf="favoriteEventArray.length < 1"
+  >
+    <div
+      class="card py-0"
+      style="
+        border-radius: 1rem;
+        background-color: white;
+        max-width: 650px;
+        margin: auto;
+      "
+    >
+      <p
+        class="text-center text-danger m-0 p-0 fw-bold"
+        style="font-size: 18px"
+      >
+        No favorite events to show
+      </p>
+    </div>
+  </div>
+
+  <div
+    class="m-0 justify-content-center align-items-center text-center"
+    *ngIf="favoriteEventArray.length > 0"
+  >
+    <p class="m-0 p-0" style="color: #99f6e0; font-size: 18px">
+      List of your favorite events
+    </p>
+    <table
+      class="table table-light table-hover text-center table-borderless p-0 my-3"
+    >
+      <thead>
+        <tr class="fw-bold">
+          <td style="width: 3%">#</td>
+          <td style="width: 11%">Date</td>
+          <td style="width: 32%">Event</td>
+          <td style="width: 31%">Category</td>
+          <td style="width: 14%">Venue</td>
+          <td style="width: 9%">Favorite</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let event of favoriteEventArray; index as i"
+          style="border-top: 1px solid lightgrey"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ event.eventDate }}</td>
+          <td>{{ event.eventName }}</td>
+          <td>{{ event.eventCategory }}</td>
+          <td>{{ event.eventVenue }}</td>
+          <td style="cursor: pointer">
+            <i
+              class="fa-regular fa-trash-can"
+              (click)="cancelFavoriteEvent(event.eventId)"
+            ></i>
+          </td>
+        </tr>
+
+        <!-- <tr>
+                    <td>1</td>
+                    <td>2023-01-01</td>
+                    <td>Pink: Summer Carnival 2023</td>
+                    <td>rock</td>
+                    <td>comerica park</td>
+                    <td>yes</td>
+                </tr> -->
+      </tbody>
+    </table>
+  </div>
+</div>

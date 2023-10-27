@@ -1,0 +1,107 @@
+<div class="container d-flex justify-content-center align-items-center ">
+    <div class="searchForm container card p-3 pt-5 pb-5 my-5" style="border-radius: 1rem;">
+        <p class="text-center text-white" id="formHeader">Events Search</p>
+
+        <hr style="color: white;">
+
+        <form
+            class="row g-3"
+            ngNativeValidate
+            (ngSubmit)="onSubmit()"
+            #searchForm="ngForm"
+        >
+            <div class="form-group col-12 mb-2">
+                <label for="keywordInput" class="form-label">Keyword&nbsp;</label>
+                <span class="text-danger">*</span>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="keywordInput"
+                    [matAutocomplete]="auto"
+                    [formControl]="keywordInputControl"
+                    required
+                >
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngIf="isLoading==true">
+                        <mat-spinner diameter="28"></mat-spinner>
+                    </mat-option>
+
+                    <ng-container *ngIf="isLoading==false">
+                        <mat-option *ngFor="let keyword of autoKeywords" [value]="keyword">
+                            {{ keyword }}
+                        </mat-option>
+                    </ng-container>
+                </mat-autocomplete>
+            </div>
+
+            <div class="form-group col-lg-6 mb-2">
+                <label for="distanceInput" class="form-label">Distance</label>
+                <input
+                    type="number"
+                    placeholder="10"
+                    class="form-control"
+                    id="distanceInput"
+                    name="distanceInput"
+                    ngModel
+                >
+            </div>
+
+            <div class="form-group col-lg-5 mb-2 col-10">
+                <label for="categoryInput" class="form-label">Category&nbsp;</label>
+                <span class="text-danger">*</span>
+                <select
+                    name="categoryInput"
+                    id="categoryInput"
+                    class="form-select"
+                    required
+                    [ngModel]="'Default'"
+                >
+                    <option value="Default">Default</option>
+                    <option value="Music">Music</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Arts & Theatre">Arts & Theatre</option>
+                    <option value="Film">Film</option>
+                    <option value="Miscellaneous">Miscellaneous</option>
+                </select>
+            </div>
+
+            <div class="form-group col-12 mb-2">
+                <label for="locationInput" class="form-label">Location&nbsp;</label>
+                <span class="text-danger">*</span>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="locationInput"
+                    name="locationInput"
+                    required
+                    [(ngModel)]="locationInput"
+                    [disabled]="autoDetetected"
+                >
+            </div>
+
+            <div class="form-group col-12">
+                <input
+                    type="checkbox"
+                    class="form-check-input me-2"
+                    id="locationCheck"
+                    name="locationCheck"
+                    [(ngModel)]="autoDetetected"
+                    (click)="clearLocationInput()"
+                >
+                <label for="locationCheck" class="form-check-label">
+                    Auto-detect&nbsp;your&nbsp;location
+                </label>
+            </div>
+
+            <div class="col-6">
+                <button type="submit" class="btn btn-danger float-end">SUBMIT</button>
+            </div>
+
+            <div class="col-6">
+                <button type="button" class="btn btn-primary" (click)="formReset()">CLEAR</button>
+            </div>
+        </form>
+
+    </div>
+</div>
+

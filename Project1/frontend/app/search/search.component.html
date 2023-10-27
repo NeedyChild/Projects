@@ -1,0 +1,12 @@
+<app-search-form></app-search-form>
+
+<div class="container justify-content-center align-content-center" *ngIf="whichToShow != 'none'">
+    <div class="container" *ngIf="whichToShow == 'table'">
+        <app-result-table></app-result-table>
+    </div>
+    <div class="container" *ngIf="whichToShow == 'card'">
+        <app-detail-card></app-detail-card>
+    </div>
+</div>
+
+<div class="p-3"></div>
