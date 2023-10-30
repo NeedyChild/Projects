@@ -2,7 +2,7 @@
 
 Codes and demo for ticketing website based on Angular & Node.js, which was deployed to AWS Elastic Beanstalk. The url for this website is not available now because my AWS account is no longer in use, so I record a video to show this website.
 
-The display video url: https://www.youtube.com/watch?v=4Wj9IHEGsjs
+The demo video url: https://www.youtube.com/watch?v=4Wj9IHEGsjs
 
 # Project 2
 
@@ -14,4 +14,4 @@ The url for this website is: https://hfisuadhfuhyu-738784.wl.r.appspot.com
 
 Codes and demo video for an event search iOS App based on Swift, SwiftUI & Node.js.
 
-The display video url: https://www.youtube.com/watch?v=lH2YbUJFB1U
+The demo video url: https://www.youtube.com/watch?v=lH2YbUJFB1U
