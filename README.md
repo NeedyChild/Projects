@@ -8,4 +8,4 @@ Codes and link for website based on HTML, CSS, JavaScript & Python, which was de
 
 # Project 3
 
-Codes and demo video for an event search iOS App based on Swift & SwiftUI.
+Codes and demo video for an event search iOS App based on Swift, SwiftUI & Node.js.
