@@ -1,10 +1,14 @@
 # Project 1
 
-Codes and demo for ticketing website based on Angular & Node.js, which was deployed to AWS Elastic Beanstalk.
+Codes and demo for ticketing website based on Angular & Node.js, which was deployed to AWS Elastic Beanstalk. The url for this website is useless now because my AWS account is no longer in use, so I record a video to show this website.
+
+The display video url: https://www.youtube.com/watch?v=4Wj9IHEGsjs
 
 # Project 2
 
 Codes and link for website based on HTML, CSS, JavaScript & Python, which was deployed to Google Cloud Platform.
+
+The url for this website is: https://hfisuadhfuhyu-738784.wl.r.appspot.com
 
 # Project 3
 
