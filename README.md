@@ -15,9 +15,3 @@ The url for this website is: https://hfisuadhfuhyu-738784.wl.r.appspot.com
 Codes and demo video for an event search iOS App based on Swift, SwiftUI & Node.js.
 
 The demo video url: https://www.youtube.com/watch?v=lH2YbUJFB1U
-
-# Project 4
-
-Codes and demo video for an business search iOS App based on Swift, SwiftUI & Node.js.
-
-The demo video url: https://www.youtube.com/watch?v=HlZjyu0rGX4
